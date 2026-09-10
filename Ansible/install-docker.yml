@@ -1,0 +1,19 @@
+---
+- name: Installation of docker
+  hosts: docker
+  become: yes
+  tasks:
+    - name: Update apt
+      apt:
+        update_cache: yes
+
+    - name: Install docker
+      apt:                          #modules apt for ubuntu 
+        name: docker.io             #package install
+        state: present
+
+    - name: Start docker
+      service:                      #to manage service module is used
+        name: docker
+        state: started
+        enabled: yes

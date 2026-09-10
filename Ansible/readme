@@ -1,0 +1,6 @@
+steps:-
+1. created ansible file to install docker on ec2.
+2. created hosts file too, ip address followed by ansibl-user Ubuntu and key-pair
+3. commands used:-
+   ansible-playbook -i hosts.ini install-docker.yml
+   

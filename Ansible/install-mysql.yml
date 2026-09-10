@@ -1,0 +1,19 @@
+---
+- name: Installation of mysql
+  hosts: db
+  become: yes
+  tasks:
+    - name: Update apt
+      apt:
+        update_cache: yes
+
+    - name: Install mysql
+      apt:
+        name: mysql-server
+        state: present
+
+    - name: Start mysql
+      service:
+        name: mysql
+        state: started
+        enabled: yes
